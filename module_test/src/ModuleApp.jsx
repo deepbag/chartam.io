@@ -1,6 +1,7 @@
 import React from "react";
-import ColumnWithRolatedLabel from "./Bar/ColumnWithRolatedLabel";
+// import ColumnWithRolatedLabel from "./Bar/ColumnWithRolatedLabel";
 import { ColumnWithRolatedLabelData } from "./@mock/Bar/ColumnWithRolatedLabel";
+import { ColumnWithRolatedLabel } from "chartam.io";
 
 const Module = () => {
   return (
