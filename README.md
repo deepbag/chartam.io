@@ -37,14 +37,16 @@ import { ColumnWithRolatedLabel } from "chartam.io";
     chartId="ColumnWithRolatedLabel" // chartid will be unique
     width="1000px" // width
     height="500px" // height
-    data={[{
-            category: "USA",
+    data={[
+        {
+            category: "India",
             value: 2025,
         },
         {
-            category: "China",
+            category: "USA",
             value: 1882,
-        }]} // data
+        }
+        ]} // data
     setting={{
         xAxis: {
             label: {
@@ -71,13 +73,13 @@ import { ColumnWithRolatedLabel } from "chartam.io";
 
 ## Documentation
 
-<!-- You can find a documentation [here](). -->
-
-Note: we are working on that!
+You can find a documentation [here](https://chartamio.netlify.app/). We are still working on!
 
 ## Dependencies
 
 - [amcharts](https://www.amcharts.com/): Programming library for all your data visualization needs.
+
+## Contributers
 
 ## License
 

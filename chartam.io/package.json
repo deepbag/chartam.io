@@ -1,13 +1,23 @@
 {
   "name": "chartam.io",
-  "version": "1.0.4",
-  "description": "",
+  "version": "1.1.0",
+  "description": "This package provides a comprehensive chart library built on top of amCharts 5, a powerful and flexible JavaScript charting library that supports a wide range of chart types and data formats.",
   "main": "dist/index.js",
   "scripts": {
     "build": "npx babel src --out-dir dist"
   },
-  "author": "deepbag",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepbag/chartam.io.git"
+  },
+  "homepage": "https://chartamio.netlify.app",
+  "keywords": [
+    "chart",
+    "chartam.io",
+    "amcharts"
+  ],
+  "author": "deepbag92@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.4",
