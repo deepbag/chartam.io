@@ -3,6 +3,8 @@ import { Box, Paper, Typography, Button } from "@mui/material";
 import PageHead from "components/PageHead";
 import DefaultHead from "components/DefaultHead";
 import SingleTextCode from "components/SingleTextCode";
+import NPMLIBRARY from "assets/images/npmlibrary.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Installation = () => {
   return (
@@ -10,6 +12,15 @@ const Installation = () => {
       <PageHead
         label="Getting Started - Installation"
         content="Install chartam.io, the world's most popular React chart library ."
+      />
+      <LazyLoadImage
+        alt={"npm library"}
+        effect="blur"
+        src={NPMLIBRARY}
+        style={{
+          width: "100%",
+          border:"2px solid #000"
+        }}
       />
       <DefaultHead
         label="Default installation"

@@ -3,6 +3,7 @@ import Charts from "pages/Charts";
 import Installation from "pages/GettingStarted/Installation/index";
 import Overview from "pages/GettingStarted/Overview/index";
 import Usage from "pages/GettingStarted/Usage/index";
+import PostYourRequirement from "pages/PostYourRequirement/index";
 import React, { useEffect, useMemo } from "react";
 import {
   Routes,
@@ -16,8 +17,8 @@ const App = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (pathname === "/") navigate("/getting-started/overview");
+  useEffect(() => { 
+    if (pathname) navigate(pathname);
   }, [pathname]);
 
   return (
@@ -30,6 +31,10 @@ const App = () => {
           <Route path="usage" element={<Usage />} />
         </Route>
         <Route path="/charts" element={<Charts />} />
+        <Route
+          path="/post-your-requirement"
+          element={<PostYourRequirement />}
+        />
       </Routes>
     </SidebarOuts>
   );

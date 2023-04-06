@@ -25,8 +25,9 @@ const SidebarOuts = ({ children }) => {
           item
           lg={10}
           sx={{
+            height: "100vh",
             overflowY: "scroll",
-            p: "20px"
+            p: "20px 20px 80px 20px"
           }}
         >
           {children}

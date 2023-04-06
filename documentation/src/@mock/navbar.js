@@ -42,4 +42,11 @@ export const navbarMenu = [
     path: "/support",
     childrens: [],
   },
+  {
+    id: 3,
+    label: "Post Your Requirement",
+    key: "post-your-requirement",
+    path: "/post-your-requirement",
+    childrens: [],
+  },
 ];

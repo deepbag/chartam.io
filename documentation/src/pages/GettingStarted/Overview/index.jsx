@@ -9,14 +9,16 @@ import {
 } from "@mui/material";
 import PageHead from "components/PageHead/index";
 import _ from "lodash";
+import NPMIO from "assets/images/npm.png";
+import GITHUBIO from "assets/images/github.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Overview = () => {
   return (
     <Box sx={{}}>
       <PageHead
         label="Getting Started - Overview"
-        content="Use typography to present your design and content as clearly and
-        efficiently as possible."
+        content="chartam.io is a library of React UI components that implements charts."
       />
       <Paper
         variant="outlined"
@@ -59,6 +61,30 @@ const Overview = () => {
             );
           })}
         </List>
+        <Box
+          display="flex"
+          sx={{
+            pt: 2,
+          }}
+        >
+          {_.map(Images, (item, index) => {
+            return (
+              <LazyLoadImage
+                alt={item.alt}
+                effect="blur"
+                src={item.Image}
+                style={{
+                  width: item.width,
+                  paddingRight: "20px",
+                  cursor: "pointer"
+                }}
+                onClick={() => {
+                  window.open(item.url, "_blank");
+                }}
+              />
+            );
+          })}
+        </Box>
       </Paper>
     </Box>
   );
@@ -73,4 +99,19 @@ const listItems = [
   "Responsive and mobile-friendly design",
   "Cross-browser compatibility",
   "Comprehensive documentation and examples",
+];
+
+const Images = [
+  {
+    alt: "chartamio npm package",
+    Image: NPMIO,
+    width: "150px",
+    url: "https://www.npmjs.com/package/chartam.io",
+  },
+  {
+    alt: "chartamio github",
+    Image: GITHUBIO,
+    width: "60px",
+    url: "https://github.com/deepbag/chartam.io",
+  },
 ];

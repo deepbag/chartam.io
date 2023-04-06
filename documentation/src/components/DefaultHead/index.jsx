@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-const DefaultHead = ({ label, content }) => {
+const DefaultHead = ({ label, content, my = "20px" }) => {
   return (
-    <Box sx={{ my: "20px" }}>
+    <Box sx={{ my: my }}>
       <Typography
         variant="h3"
         sx={{
