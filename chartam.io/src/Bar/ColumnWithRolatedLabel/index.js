@@ -15,7 +15,7 @@ export default function ColumnWithRolatedLabel({
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root.new(chartId);
 
-    root._logo.dispose();
+    root._logo?.dispose();
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -42,8 +42,17 @@ export default function ColumnWithRolatedLabel({
     // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
 
+    const labelModule = {
+      rotation: setting?.xAxis?.label?.rotation,
+      paddingRight: setting?.xAxis?.label?.paddingRight,
+    };
+
+    if (!Boolean(setting?.xAxis?.label?.rotation)) delete labelModule.rotation;
+    if (!Boolean(setting?.xAxis?.label?.paddingRight))
+      delete labelModule.paddingRight;
+
     xRenderer.labels.template.setAll({
-      ...setting.xAxis.label,
+      ...labelModule,
       centerY: am5.p50,
       centerX: am5.p100,
     });
@@ -63,12 +72,12 @@ export default function ColumnWithRolatedLabel({
 
     // yAxis Modules
     const yAxisModule = {
-      min: setting.yAxis.minValue,
-      max: setting.yAxis.maxValue,
+      min: setting.yAxis?.minValue,
+      max: setting.yAxis?.maxValue,
     };
 
-    if (!Boolean(setting.yAxis.maxValue)) delete yAxisModule.max;
-    if (!Boolean(setting.yAxis.minValue)) delete yAxisModule.min;
+    if (!Boolean(setting.yAxis?.maxValue)) delete yAxisModule.max;
+    if (!Boolean(setting.yAxis?.minValue)) delete yAxisModule.min;
 
     var yAxis = chart.yAxes.push(
       am5xy.ValueAxis.new(root, {
@@ -90,9 +99,9 @@ export default function ColumnWithRolatedLabel({
         valueYField: "value",
         sequencedInterpolation: true,
         categoryXField: "category",
-        fill: am5.color(setting.columnSeries.barcolor || "#5191fa"),
+        fill: am5.color(setting.columnSeries?.barcolor || "#5191fa"),
         tooltip: am5.Tooltip.new(root, {
-          labelText: setting.columnSeries.tooltipText || "{valueY}",
+          labelText: setting.columnSeries?.tooltipText || "{valueY}",
         }),
       })
     );

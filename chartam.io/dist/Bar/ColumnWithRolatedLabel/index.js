@@ -25,10 +25,11 @@ function ColumnWithRolatedLabel(_ref) {
     _ref$setting = _ref.setting,
     setting = _ref$setting === void 0 ? {} : _ref$setting;
   (0, _react.useLayoutEffect)(function () {
+    var _root$_logo, _setting$xAxis, _setting$xAxis$label, _setting$xAxis2, _setting$xAxis2$label, _setting$xAxis3, _setting$xAxis3$label, _setting$xAxis4, _setting$xAxis4$label, _setting$yAxis, _setting$yAxis2, _setting$yAxis3, _setting$yAxis4, _setting$columnSeries, _setting$columnSeries2;
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root["new"](chartId);
-    root._logo.dispose();
+    (_root$_logo = root._logo) === null || _root$_logo === void 0 ? void 0 : _root$_logo.dispose();
 
     // Set themes
     // https://www.amcharts.com/docs/v5/concepts/themes/
@@ -54,7 +55,13 @@ function ColumnWithRolatedLabel(_ref) {
     var xRenderer = am5xy.AxisRendererX["new"](root, {
       minGridDistance: 30
     });
-    xRenderer.labels.template.setAll(_objectSpread(_objectSpread({}, setting.xAxis.label), {}, {
+    var labelModule = {
+      rotation: setting === null || setting === void 0 ? void 0 : (_setting$xAxis = setting.xAxis) === null || _setting$xAxis === void 0 ? void 0 : (_setting$xAxis$label = _setting$xAxis.label) === null || _setting$xAxis$label === void 0 ? void 0 : _setting$xAxis$label.rotation,
+      paddingRight: setting === null || setting === void 0 ? void 0 : (_setting$xAxis2 = setting.xAxis) === null || _setting$xAxis2 === void 0 ? void 0 : (_setting$xAxis2$label = _setting$xAxis2.label) === null || _setting$xAxis2$label === void 0 ? void 0 : _setting$xAxis2$label.paddingRight
+    };
+    if (!Boolean(setting === null || setting === void 0 ? void 0 : (_setting$xAxis3 = setting.xAxis) === null || _setting$xAxis3 === void 0 ? void 0 : (_setting$xAxis3$label = _setting$xAxis3.label) === null || _setting$xAxis3$label === void 0 ? void 0 : _setting$xAxis3$label.rotation)) delete labelModule.rotation;
+    if (!Boolean(setting === null || setting === void 0 ? void 0 : (_setting$xAxis4 = setting.xAxis) === null || _setting$xAxis4 === void 0 ? void 0 : (_setting$xAxis4$label = _setting$xAxis4.label) === null || _setting$xAxis4$label === void 0 ? void 0 : _setting$xAxis4$label.paddingRight)) delete labelModule.paddingRight;
+    xRenderer.labels.template.setAll(_objectSpread(_objectSpread({}, labelModule), {}, {
       centerY: am5.p50,
       centerX: am5.p100
     }));
@@ -70,11 +77,11 @@ function ColumnWithRolatedLabel(_ref) {
 
     // yAxis Modules
     var yAxisModule = {
-      min: setting.yAxis.minValue,
-      max: setting.yAxis.maxValue
+      min: (_setting$yAxis = setting.yAxis) === null || _setting$yAxis === void 0 ? void 0 : _setting$yAxis.minValue,
+      max: (_setting$yAxis2 = setting.yAxis) === null || _setting$yAxis2 === void 0 ? void 0 : _setting$yAxis2.maxValue
     };
-    if (!Boolean(setting.yAxis.maxValue)) delete yAxisModule.max;
-    if (!Boolean(setting.yAxis.minValue)) delete yAxisModule.min;
+    if (!Boolean((_setting$yAxis3 = setting.yAxis) === null || _setting$yAxis3 === void 0 ? void 0 : _setting$yAxis3.maxValue)) delete yAxisModule.max;
+    if (!Boolean((_setting$yAxis4 = setting.yAxis) === null || _setting$yAxis4 === void 0 ? void 0 : _setting$yAxis4.minValue)) delete yAxisModule.min;
     var yAxis = chart.yAxes.push(am5xy.ValueAxis["new"](root, _objectSpread(_objectSpread({
       maxDeviation: 0.3
     }, yAxisModule), {}, {
@@ -92,9 +99,9 @@ function ColumnWithRolatedLabel(_ref) {
       valueYField: "value",
       sequencedInterpolation: true,
       categoryXField: "category",
-      fill: am5.color(setting.columnSeries.barcolor || "#5191fa"),
+      fill: am5.color(((_setting$columnSeries = setting.columnSeries) === null || _setting$columnSeries === void 0 ? void 0 : _setting$columnSeries.barcolor) || "#5191fa"),
       tooltip: am5.Tooltip["new"](root, {
-        labelText: setting.columnSeries.tooltipText || "{valueY}"
+        labelText: ((_setting$columnSeries2 = setting.columnSeries) === null || _setting$columnSeries2 === void 0 ? void 0 : _setting$columnSeries2.tooltipText) || "{valueY}"
       })
     }));
     series.columns.template.setAll({

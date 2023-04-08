@@ -3,12 +3,12 @@ import { Box, Paper } from "@mui/material";
 import PageHead from "components/PageHead";
 import DefaultHead from "components/DefaultHead";
 
-const Usage = () => {
+const ColumnWithRotatedLabelBar = () => {
   return (
     <Box sx={{}}>
       <PageHead
-        label="Getting Started - Usage"
-        content="Learn the basics of working with chartam.io components."
+        label="Column with Rotated Labels"
+        content="Beautiful bar chart with column with rotated labels category wised data."
       />
       <Paper
         variant="outlined"
@@ -17,11 +17,11 @@ const Usage = () => {
           p: "20px",
         }}
       >
-        <DefaultHead
+        {/* <DefaultHead
           label="Quickstart"
           content="The following code snippet demonstrates a simple app that uses the chartamio component:"
           my="5px"
-        />
+        /> */}
 
         <iframe
           src="https://stackblitz.com/edit/react-a2olzr?embed=1&file=src/Chartam.js&hideExplorer=1&theme=dark"
@@ -30,10 +30,10 @@ const Usage = () => {
             height: "600px",
             border: "none",
           }}
-        />  
+        />
       </Paper>
     </Box>
   );
 };
 
-export default Usage;
+export default ColumnWithRotatedLabelBar;

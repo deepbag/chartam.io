@@ -57,7 +57,7 @@ const Sidebar = () => {
                           ? "white"
                           : item.childrens.length > 0
                           ? "white"
-                          : "black",
+                          : "#343541",
                     }}
                   >
                     {item.label}
@@ -74,7 +74,7 @@ const Sidebar = () => {
                           ? "white"
                           : item.childrens.length > 0
                           ? "white"
-                          : "black",
+                          : "#343541",
                     }}
                   >
                     {item.label}

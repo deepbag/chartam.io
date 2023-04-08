@@ -1,2 +1,4 @@
 import ColumnWithRolatedLabel from "./Bar/ColumnWithRolatedLabel";
-export { ColumnWithRolatedLabel };
+import DateLine from "./Line/DateLine";
+
+export { ColumnWithRolatedLabel, DateLine };

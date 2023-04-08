@@ -33,20 +33,19 @@ export const navbarMenu = [
     label: "Charts",
     key: "charts",
     path: "/charts",
-    childrens: [],
-  },
-  {
-    id: 3,
-    label: "Support",
-    key: "support",
-    path: "/support",
-    childrens: [],
-  },
-  {
-    id: 3,
-    label: "Post Your Requirement",
-    key: "post-your-requirement",
-    path: "/post-your-requirement",
-    childrens: [],
+    childrens: [
+      {
+        id: 1,
+        label: "Column With Rotated Label Bar",
+        key: "column-with-rotated-label",
+        path: "/column-with-rotated-label",
+      },
+      {
+        id: 2,
+        label: "Date Line Chart",
+        key: "date-line-chart",
+        path: "/date-line-chart",
+      },
+    ],
   },
 ];

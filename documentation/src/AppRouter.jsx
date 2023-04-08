@@ -1,5 +1,7 @@
 import SidebarOuts from "layout/SidebarOuts";
 import Charts from "pages/Charts";
+import ColumnWithRotatedLabelBar from "pages/Charts/Bar/ColumnWithRotatedLabelBar/index";
+import DateLineChart from "pages/Charts/Line/DateLineChart/index";
 import Installation from "pages/GettingStarted/Installation/index";
 import Overview from "pages/GettingStarted/Overview/index";
 import Usage from "pages/GettingStarted/Usage/index";
@@ -17,7 +19,7 @@ const App = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => { 
+  useEffect(() => {
     if (pathname) navigate(pathname);
   }, [pathname]);
 
@@ -30,7 +32,13 @@ const App = () => {
           <Route path="installation" element={<Installation />} />
           <Route path="usage" element={<Usage />} />
         </Route>
-        <Route path="/charts" element={<Charts />} />
+        <Route path="/charts" element={<Outlet />}>
+          <Route
+            path="column-with-rotated-label"
+            element={<ColumnWithRotatedLabelBar />}
+          />
+          <Route path="date-line-chart" element={<DateLineChart />} />
+        </Route>
         <Route
           path="/post-your-requirement"
           element={<PostYourRequirement />}
