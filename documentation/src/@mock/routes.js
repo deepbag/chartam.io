@@ -3,67 +3,54 @@ import DateLineChart from "pages/Charts/Line/DateLineChart/index";
 import Installation from "pages/GettingStarted/Installation/index";
 import Overview from "pages/GettingStarted/Overview/index";
 import Usage from "pages/GettingStarted/Usage/index";
+import PostYourRequirement from "pages/PostYourRequirement/index";
 import { Outlet } from "react-router-dom";
 
-export const navbarMenu = [
+export const routeMenu = [
   {
-    id: 1,
-    label: "Getting Started",
-    key: "getting-started",
+    path: "/",
+    element: <Outlet />,
+    children: [],
+  },
+  {
     path: "/getting-started",
     element: <Outlet />,
-    type: "parent",
-    childrens: [
+    children: [
       {
-        id: 1,
-        label: "Overview",
-        key: "getting-started-overview",
         path: "overview",
         element: <Overview />,
-        type: "child",
       },
       {
-        id: 2,
-        label: "Installation",
-        key: "getting-started-installation",
         path: "installation",
         element: <Installation />,
-        type: "child",
       },
       {
-        id: 3,
-        label: "Usage",
-        key: "getting-started-usage",
         path: "usage",
         element: <Usage />,
-        type: "child",
       },
     ],
   },
   {
-    id: 2,
-    label: "Charts",
-    key: "charts",
     path: "/charts",
     element: <Outlet />,
-    type: "parent",
-    childrens: [
+    children: [
       {
-        id: 1,
-        label: "Column With Rotated Label Bar",
-        key: "charts-column-with-rotated-label",
         path: "column-with-rotated-label",
         element: <ColumnWithRotatedLabelBar />,
-        type: "child",
       },
       {
-        id: 2,
-        label: "Date Line Chart",
-        key: "charts-date-line-chart",
         path: "date-line-chart",
         element: <DateLineChart />,
-        type: "child",
+      },
+      {
+        path: "usage",
+        element: <Usage />,
       },
     ],
+  },
+  {
+    path: "/post-your-requirement",
+    element: <PostYourRequirement />,
+    children: [],
   },
 ];

@@ -9,6 +9,7 @@ const Header = () => {
         height: "60px",
         display: "flex",
         alignItems: "center",
+        zIndex: 100,
       }}
       maxWidth={false}
     >

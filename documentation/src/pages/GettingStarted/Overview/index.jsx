@@ -70,13 +70,14 @@ const Overview = () => {
           {_.map(Images, (item, index) => {
             return (
               <LazyLoadImage
+                key={index}
                 alt={item.alt}
                 effect="blur"
                 src={item.Image}
                 style={{
                   width: item.width,
                   paddingRight: "20px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
                 onClick={() => {
                   window.open(item.url, "_blank");

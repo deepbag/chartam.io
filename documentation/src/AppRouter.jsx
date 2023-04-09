@@ -1,11 +1,6 @@
+import { navbarMenu } from "@mock/navbar";
 import SidebarOuts from "layout/SidebarOuts";
-import Charts from "pages/Charts";
-import ColumnWithRotatedLabelBar from "pages/Charts/Bar/ColumnWithRotatedLabelBar/index";
-import DateLineChart from "pages/Charts/Line/DateLineChart/index";
-import Installation from "pages/GettingStarted/Installation/index";
-import Overview from "pages/GettingStarted/Overview/index";
-import Usage from "pages/GettingStarted/Usage/index";
-import PostYourRequirement from "pages/PostYourRequirement/index";
+import _ from "lodash";
 import React, { useEffect, useMemo } from "react";
 import {
   Routes,
@@ -14,35 +9,60 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
+import { setOpenChildKey, setOpenKey } from "redux/reducers/menus.slice";
+import { useDispatch } from "react-redux";
 
 const App = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (pathname) navigate(pathname);
+    if (pathname === "/") navigate("/getting-started/overview");
   }, [pathname]);
+
+  useEffect(() => {
+    if (pathname) {
+      const splitItem = _.remove(_.split(pathname, "/"), (item) => item !== "");
+      const route = _.kebabCase(splitItem.join(" "));
+      const result = _.find(
+        _.flatMapDeep(navbarMenu, (item) => item.childrens || item),
+        { key: route }
+      );
+      if (result) {
+        if (result.type === "child") {
+          dispatch(setOpenKey(splitItem[0]));
+          dispatch(setOpenChildKey(result.key));
+        } else if (result.type === "parent") dispatch(setOpenKey(result.key));
+      }
+    }
+  }, []);
 
   return (
     <SidebarOuts>
       <Routes>
-        <Route path="/" element={<Outlet />} />
-        <Route path="/getting-started" element={<Outlet />}>
-          <Route path="overview" element={<Overview />} />
-          <Route path="installation" element={<Installation />} />
-          <Route path="usage" element={<Usage />} />
-        </Route>
-        <Route path="/charts" element={<Outlet />}>
-          <Route
-            path="column-with-rotated-label"
-            element={<ColumnWithRotatedLabelBar />}
-          />
-          <Route path="date-line-chart" element={<DateLineChart />} />
-        </Route>
-        <Route
-          path="/post-your-requirement"
-          element={<PostYourRequirement />}
-        />
+        <Route path="/" element={<Outlet />} />;
+        {_.map(navbarMenu, (item, index) => {
+          if (_.isEmpty(item.childrens)) {
+            return (
+              <Route path={item.path} element={item.element} key={index} />
+            );
+          } else if (!_.isEmpty(item.childrens)) {
+            return (
+              <Route path={item.path} element={item.element} key={index}>
+                {_.map(item.childrens, (itemIn, indexIn) => {
+                  return (
+                    <Route
+                      path={itemIn.path}
+                      element={itemIn.element}
+                      key={indexIn}
+                    />
+                  );
+                })}
+              </Route>
+            );
+          }
+        })}
       </Routes>
     </SidebarOuts>
   );

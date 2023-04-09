@@ -3,10 +3,7 @@ import { Box, Typography } from "@mui/material";
 import _ from "lodash";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setOpenChildKey,
-  setOpenKey,
-} from "redux/reducers/menus.slice";
+import { setOpenChildKey, setOpenKey } from "redux/reducers/menus.slice";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 
@@ -46,7 +43,6 @@ const Sidebar = () => {
               }}
             >
               <Box>
-                {/* {item.icon} */}
                 {item.childrens.length !== 0 ? (
                   <Typography
                     sx={{
@@ -111,30 +107,13 @@ const Sidebar = () => {
             {openKey === item.key &&
               _.map(item.childrens, (child, index) => {
                 return (
-                  <Box
-                    sx={{
-                      background: openChildKey !== child.key && "white",
-                      p: "8px 0 8px 30px",
-                      "&:hover": {
-                        cursor: "pointer",
-                        background: openChildKey !== child.key && "#fafbfc",
-                      },
-                    }}
+                  <NavLinkCustom
                     key={index}
-                  >
-                    <NavLink
-                      to={`${item.path}${child.path}`}
-                      style={{
-                        textDecoration: "none",
-                        fontSize: "15px",
-                        fontWeight: "400",
-                        color: openChildKey === child.key ? "white" : "black",
-                      }}
-                      onClick={() => dispatch(setOpenChildKey(child.key))}
-                    >
-                      {child.label}
-                    </NavLink>
-                  </Box>
+                    path={`${item.path}/${child.path}`}
+                    active={openChildKey}
+                    item={child}
+                    handleClick={() => dispatch(setOpenChildKey(child.key))}
+                  />
                 );
               })}
           </Box>
@@ -145,3 +124,28 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+const NavLinkCustom = ({ path, active, item, handleClick }) => {
+  return (
+    <NavLink
+      to={path}
+      style={{
+        textDecoration: "none",
+        fontSize: "15px",
+        fontWeight: "400",
+        color: active !== item.key ? "white" : "black",
+      }}
+      onClick={handleClick}
+    >
+      <Box
+        sx={{
+          background: active === item.key && "white",
+          p: "8px 0 8px 30px",
+        }}
+        // key={index}
+      >
+        {item.label}
+      </Box>
+    </NavLink>
+  );
+};
