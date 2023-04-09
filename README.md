@@ -95,6 +95,7 @@ For more information on how to use Chartam.io, see the [documentation](https://c
 ## Contributers
 
 We welcome contributions from the community! If you find a bug, have a feature request, or would like to contribute code, please open an issue or pull request on our GitHub repository. [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/deepbag/chartam.io)
+<!-- https://contrib.rocks/preview?repo=angular%2Fangular-ja -->
 
 <a href="https://github.com/deepbag/chartam.io/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=deepbag/chartam.io" />
