@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# chartam.io
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![npm version](https://badge.fury.io/js/chartam.io.svg)](https://www.npmjs.com/package/chartam.io) [![downloads](https://img.shields.io/npm/dw/chartam.io)](https://github.com/deepbag/chartam.io) [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/) [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/deepbag/chartam.io) [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/deepbag/) [![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)](https://trello.com/invite/b/D8VrvGFF/ATTI7888b4e12709c07e92156d11ce41f8ec74E5F25B/chartamio) [![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/chartam.io) ![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black) ![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA) [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](https://github.com/deepbag/chartam.io/blob/main/chartam.io/LICENSE)
 
-## Available Scripts
+This package provides a comprehensive chart library built on top of amCharts 5, a powerful and flexible React charting library that supports a wide range of chart types and data formats.
 
-In the project directory, you can run:
+With this library, you can easily create visually stunning and interactive charts for your web applications, dashboards, and reports. The library includes a variety of pre-built chart types, such as bar charts, line charts, scatter charts, and more, that can be customized to fit your specific needs.
 
-### `npm start`
+The package is designed to be easy to use and integrate into your existing web development workflow. It comes with comprehensive documentation and examples to help you get started quickly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Wide range of chart types
+2. High-performance rendering
+3. Fully customizable styling
+4. Responsive and mobile-friendly design
+5. Cross-browser compatibility
+6. Comprehensive documentation and examples
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
-### `npm run build`
+```sh
+npm install chartam.io --save
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install Package
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```coffeescript
+# import specific chart
+import { ColumnWithRolatedLabel } from "chartam.io";
 
-### `npm run eject`
+<ColumnWithRolatedLabel
+    chartId="ColumnWithRolatedLabel" // chartid will be unique
+    width="1000px" // width
+    height="500px" // height
+    data={[
+        {
+            category: "India",
+            value: 2025,
+        },
+        {
+            category: "USA",
+            value: 1882,
+        }
+        ]} // data
+    setting={{
+        xAxis: {
+            label: {
+              rotation: -90, // rotation
+              paddingRight: 15, // padding right
+            },
+        },
+        yAxis: {
+            minValue: 100, // value for yaxis start point
+            maxValue: 2500, // value for yaxis end point
+        },
+        columnSeries: {
+            tooltipText: "{value} {category}", // JSON key names
+            barcolor: "#6ed27a", // color code
+          },
+        }}
+/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Documentation
 
-## Learn More
+You can find a documentation [here](https://chartamio.netlify.app/). We are still working on!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [amcharts](https://www.amcharts.com/): Programming library for all your data visualization needs.
 
-### Code Splitting
+## Contributers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](LICENSE)
