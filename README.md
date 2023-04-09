@@ -90,10 +90,15 @@ For more information on how to use Chartam.io, see the [documentation](https://c
 ## Dependencies
 
 - [amcharts](https://www.amcharts.com/): Programming library for all your data visualization needs.
+- [lodash](https://lodash.com/): Lodash makes JavaScript easier by taking the hassle out of working with arrays, numbers, objects, strings, etc.
 
 ## Contributers
 
 We welcome contributions from the community! If you find a bug, have a feature request, or would like to contribute code, please open an issue or pull request on our GitHub repository. [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/deepbag/chartam.io)
+
+<a href="https://github.com/deepbag/chartam.io/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=deepbag/chartam.io" />
+</a>
 
 ## License
 
