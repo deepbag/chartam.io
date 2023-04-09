@@ -25,6 +25,10 @@ Features:
 2. You can ask question in trello as well as.
 3. Write your thoughts about package in trello as well.
 
+## Buy me a coffee
+
+[![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/erdeepbag)
+
 ## Installation
 
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
