@@ -10,3 +10,6 @@ body {
 .headerMain{
   justify-content: space-between !important;
 }
+.badgesIn .lazy-load-image-background{
+  margin-right: 10px;
+}

@@ -20,6 +20,7 @@ const PageHead = ({ label, content }) => {
           fontWeight: "300",
           fontSize: "18px",
           mb: "10px",
+          lineHeight: "28px"
         }}
       >
         {content}

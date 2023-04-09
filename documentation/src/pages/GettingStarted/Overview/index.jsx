@@ -11,7 +11,10 @@ import PageHead from "components/PageHead/index";
 import _ from "lodash";
 import NPMIO from "assets/images/npm.png";
 import GITHUBIO from "assets/images/github.png";
+import BANNER from "assets/images/chartbanner.png";
+import { _badges } from "@mock/badges";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import PaperCustom from "components/PaperCustom/index";
 
 const Overview = () => {
   return (
@@ -20,13 +23,36 @@ const Overview = () => {
         label="Getting Started - Overview"
         content="chartam.io is a library of React UI components that implements charts."
       />
-      <Paper
-        variant="outlined"
-        square
-        sx={{
-          p: "20px",
-        }}
-      >
+      <PaperCustom>
+        <LazyLoadImage
+          alt="banner"
+          effect="blur"
+          src={BANNER}
+          style={{
+            width: "100%",
+            paddingBottom: "10px",
+          }}
+        />
+        <Box className="badgesIn" sx={{ mb: 2 }}>
+          {_.map(_badges, (item, index) => {
+            return (
+              <LazyLoadImage
+                key={index}
+                alt="badges"
+                effect="blur"
+                src={item.logo}
+                style={{
+                  width: "100%",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  window.open(item.redirect, "_blank");
+                }}
+              />
+            );
+          })}
+        </Box>
+
         <Typography sx={{ lineHeight: "30px" }}>
           This package provides a comprehensive chart library built on top of
           amCharts 5, a powerful and flexible JavaScript charting library that
@@ -61,7 +87,7 @@ const Overview = () => {
             );
           })}
         </List>
-        <Box
+        {/* <Box
           display="flex"
           sx={{
             pt: 2,
@@ -85,8 +111,8 @@ const Overview = () => {
               />
             );
           })}
-        </Box>
-      </Paper>
+        </Box> */}
+      </PaperCustom>
     </Box>
   );
 };

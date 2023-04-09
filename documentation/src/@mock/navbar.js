@@ -1,7 +1,9 @@
 import ColumnWithRotatedLabelBar from "pages/Charts/Bar/ColumnWithRotatedLabelBar/index";
 import DateLineChart from "pages/Charts/Line/DateLineChart/index";
+import Contributers from "pages/GettingStarted/Contributers/index";
 import Installation from "pages/GettingStarted/Installation/index";
 import Overview from "pages/GettingStarted/Overview/index";
+import Sponsors from "pages/GettingStarted/Sponsors/index";
 import Usage from "pages/GettingStarted/Usage/index";
 import { Outlet } from "react-router-dom";
 
@@ -36,6 +38,22 @@ export const navbarMenu = [
         key: "getting-started-usage",
         path: "usage",
         element: <Usage />,
+        type: "child",
+      },
+      {
+        id: 4,
+        label: "Contributers",
+        key: "getting-started-contributers",
+        path: "contributers",
+        element: <Contributers />,
+        type: "child",
+      },
+      {
+        id: 4,
+        label: "Sponsors",
+        key: "getting-started-sponsors",
+        path: "sponsors",
+        element: <Sponsors />,
         type: "child",
       },
     ],
