@@ -1,6 +1,6 @@
 # chartam.io
 
-[![npm version](https://badge.fury.io/js/chartam.io.svg)](https://www.npmjs.com/package/chartam.io) [![downloads](https://img.shields.io/npm/dw/chartam.io)](https://npmjs.org/package/create-readme)
+[![npm version](https://badge.fury.io/js/chartam.io.svg)](https://www.npmjs.com/package/chartam.io) [![downloads](https://img.shields.io/npm/dw/chartam.io)](https://github.com/deepbag/chartam.io)
 
 This package provides a comprehensive chart library built on top of amCharts 5, a powerful and flexible JavaScript charting library that supports a wide range of chart types and data formats.
 

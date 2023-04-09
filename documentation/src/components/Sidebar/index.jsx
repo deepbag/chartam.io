@@ -112,7 +112,10 @@ const Sidebar = () => {
                     path={`${item.path}/${child.path}`}
                     active={openChildKey}
                     item={child}
-                    handleClick={() => dispatch(setOpenChildKey(child.key))}
+                    handleClick={() => {
+                      dispatch(setOpenKey(item.key));
+                      dispatch(setOpenChildKey(child.key));
+                    }}
                   />
                 );
               })}

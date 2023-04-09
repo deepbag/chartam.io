@@ -19,9 +19,12 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function RolatedLabel(_ref) {
   var chartId = _ref.chartId,
-    width = _ref.width,
-    height = _ref.height,
-    data = _ref.data,
+    _ref$width = _ref.width,
+    width = _ref$width === void 0 ? "1000px" : _ref$width,
+    _ref$height = _ref.height,
+    height = _ref$height === void 0 ? "500px" : _ref$height,
+    _ref$data = _ref.data,
+    data = _ref$data === void 0 ? [] : _ref$data,
     _ref$setting = _ref.setting,
     setting = _ref$setting === void 0 ? {} : _ref$setting;
   (0, _react.useLayoutEffect)(function () {

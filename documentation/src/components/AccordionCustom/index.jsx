@@ -29,7 +29,7 @@ export default function AccordionCustom({
         <Typography sx={{ color: "text.secondary" }}>{summary}</Typography>
       </AccordionSummary>
       <AccordionDetails sx={{ background: "#f5f7fb", pt: 2 }}>
-        <Typography>{description}</Typography>
+        <Typography sx={{ mb: 2 }}>{description}</Typography>
         {children}
       </AccordionDetails>
     </Accordion>

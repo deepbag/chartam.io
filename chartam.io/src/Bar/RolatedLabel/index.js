@@ -5,9 +5,9 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
 export default function RolatedLabel({
   chartId,
-  width,
-  height,
-  data,
+  width = "1000px",
+  height = "500px",
+  data = [],
   setting = {},
 }) {
   useLayoutEffect(() => {

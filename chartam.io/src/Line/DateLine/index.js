@@ -6,9 +6,9 @@ import _ from "lodash";
 
 export default function DateLine({
   chartId,
-  width,
-  height,
-  data,
+  width = "1000px",
+  height = "500px",
+  data = [],
   setting = {},
 }) {
   useLayoutEffect(() => {
@@ -90,66 +90,63 @@ export default function DateLine({
 
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-    _.map(
-      _.uniqBy(_.map(data, "category")),
-      (item, index) => {
-        let colorItem = [];
+    _.map(_.uniqBy(_.map(data, "category")), (item, index) => {
+      let colorItem = [];
 
-        if (_.isArray(setting?.series?.color))
-          colorItem = [...setting?.series?.color];
+      if (_.isArray(setting?.series?.color))
+        colorItem = [...setting?.series?.color];
 
-        let seriesItem = {
-          fill: am5.color(colorItem[index] || 0x095256),
-          stroke: am5.color(colorItem[index] || 0x095256),
-        };
+      let seriesItem = {
+        fill: am5.color(colorItem[index] || 0x095256),
+        stroke: am5.color(colorItem[index] || 0x095256),
+      };
 
-        var series = chart.series.push(
-          am5xy.LineSeries.new(root, {
-            name: item,
-            xAxis: xAxis,
-            yAxis: yAxis,
-            valueYField: "value",
-            valueXField: "date",
-            ...seriesItem,
-            tooltip: am5.Tooltip.new(root, {
-              labelText: `${item} {valueY}`,
-            }),
-          })
-        );
+      var series = chart.series.push(
+        am5xy.LineSeries.new(root, {
+          name: item,
+          xAxis: xAxis,
+          yAxis: yAxis,
+          valueYField: "value",
+          valueXField: "date",
+          ...seriesItem,
+          tooltip: am5.Tooltip.new(root, {
+            labelText: `${item} {valueY}`,
+          }),
+        })
+      );
 
-        //   var tooltip = series.set("tooltip", am5.Tooltip.new(root, {}));
-        //   tooltip.label.set("text", "{valueY}");
+      //   var tooltip = series.set("tooltip", am5.Tooltip.new(root, {}));
+      //   tooltip.label.set("text", "{valueY}");
 
-        let strokeItem = {
-          strokeWidth: setting?.series?.stroke?.width,
-          strokeDasharray: setting?.series?.stroke?.dashedDistance,
-        };
-        if (!Boolean(setting?.series?.stroke.width))
-          delete seriesItem?.strokeWidth;
-        if (!Boolean(setting?.series?.stroke.dashed)) {
-          delete seriesItem?.strokeDasharray;
-        } else if (!Boolean(setting?.series?.stroke?.dashedDistance)) {
-          strokeItem.strokeDasharray = [5, 5];
-        }
-
-        let fillItem = {
-          fillOpacity: setting?.series?.fills?.opacity,
-          visible: true,
-        };
-        if (!Boolean(setting?.series?.fills?.opacity))
-          delete seriesItem?.fillOpacity;
-
-        series.strokes.template.setAll(strokeItem);
-        series.fills.template.setAll(fillItem);
-
-        // Set data
-        series.data.setAll(_.filter(data, (ev) => ev.category === item));
-
-        // Make stuff animate on load
-        // https://www.amcharts.com/docs/v5/concepts/animations/
-        series.appear(1000);
+      let strokeItem = {
+        strokeWidth: setting?.series?.stroke?.width,
+        strokeDasharray: setting?.series?.stroke?.dashedDistance,
+      };
+      if (!Boolean(setting?.series?.stroke.width))
+        delete seriesItem?.strokeWidth;
+      if (!Boolean(setting?.series?.stroke.dashed)) {
+        delete seriesItem?.strokeDasharray;
+      } else if (!Boolean(setting?.series?.stroke?.dashedDistance)) {
+        strokeItem.strokeDasharray = [5, 5];
       }
-    );
+
+      let fillItem = {
+        fillOpacity: setting?.series?.fills?.opacity,
+        visible: true,
+      };
+      if (!Boolean(setting?.series?.fills?.opacity))
+        delete seriesItem?.fillOpacity;
+
+      series.strokes.template.setAll(strokeItem);
+      series.fills.template.setAll(fillItem);
+
+      // Set data
+      series.data.setAll(_.filter(data, (ev) => ev.category === item));
+
+      // Make stuff animate on load
+      // https://www.amcharts.com/docs/v5/concepts/animations/
+      series.appear(1000);
+    });
 
     // Add scrollbar
     // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
