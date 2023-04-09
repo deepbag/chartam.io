@@ -3,7 +3,7 @@ import * as am5xy from "@amcharts/amcharts5/xy";
 import * as am5 from "@amcharts/amcharts5";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-export default function ColumnWithRolatedLabel({
+export default function RolatedLabel({
   chartId,
   width,
   height,
@@ -99,9 +99,9 @@ export default function ColumnWithRolatedLabel({
         valueYField: "value",
         sequencedInterpolation: true,
         categoryXField: "category",
-        fill: am5.color(setting.columnSeries?.barcolor || "#5191fa"),
+        fill: am5.color(setting.series?.barcolor || "#5191fa"),
         tooltip: am5.Tooltip.new(root, {
-          labelText: setting.columnSeries?.tooltipText || "{valueY}",
+          labelText: setting.series?.tooltipText || "{valueY}",
         }),
       })
     );

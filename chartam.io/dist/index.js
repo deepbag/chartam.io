@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "ColumnWithRolatedLabel", {
   enumerable: true,
   get: function get() {
-    return _ColumnWithRolatedLabel["default"];
+    return _RolatedLabel["default"];
   }
 });
 Object.defineProperty(exports, "DateLine", {
@@ -15,6 +15,6 @@ Object.defineProperty(exports, "DateLine", {
     return _DateLine["default"];
   }
 });
-var _ColumnWithRolatedLabel = _interopRequireDefault(require("./Bar/ColumnWithRolatedLabel"));
+var _RolatedLabel = _interopRequireDefault(require("./Bar/RolatedLabel"));
 var _DateLine = _interopRequireDefault(require("./Line/DateLine"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
