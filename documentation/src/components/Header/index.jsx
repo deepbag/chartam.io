@@ -1,7 +1,11 @@
 import { Container, Typography, Box } from "@mui/material";
 import React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 const Header = () => {
+  const theme = useTheme();
+  const downsm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Container
       sx={{
@@ -28,17 +32,25 @@ const Header = () => {
         </Typography>
       </Box>
       <Box>
+        {/* {!downsm && ( */}
         <Typography
           sx={{
-            fontSize: "15px",
+            fontSize: {
+              xs: "12px",
+              md: "15px",
+            },
             fontWeight: "200",
             color: "black",
             background: "#aee892",
-            p: "0 15px"
+            p: {
+              xs: "0 5px",
+              md: "0 15px",
+            },
           }}
         >
           We are still developing documentation
         </Typography>
+        {/* )} */}
       </Box>
     </Container>
   );

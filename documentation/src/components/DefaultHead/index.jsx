@@ -9,7 +9,7 @@ const DefaultHead = ({ label, content, mb = "20px" }) => {
         sx={{
           fontWeight: "500",
           fontSize: "20px",
-          mb: "10px",
+          my: "10px",
         }}
       >
         {label}

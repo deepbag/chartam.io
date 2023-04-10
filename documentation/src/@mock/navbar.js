@@ -6,6 +6,20 @@ import Overview from "pages/GettingStarted/Overview/index";
 import Sponsors from "pages/GettingStarted/Sponsors/index";
 import Usage from "pages/GettingStarted/Usage/index";
 import { Outlet } from "react-router-dom";
+import {
+  SlidersOutlined,
+  DotChartOutlined,
+  CheckCircleOutlined,
+  CodeOutlined,
+  CoffeeOutlined,
+  DeploymentUnitOutlined,
+  FieldBinaryOutlined,
+  NodeIndexOutlined,
+  StockOutlined,
+} from "@ant-design/icons";
+
+const styleInD = { fontSize: "18px", color: "white", paddingRight: "8px" };
+const styleInM = { fontSize: "18px", color: "black", paddingRight: "8px" };
 
 export const navbarMenu = [
   {
@@ -14,6 +28,8 @@ export const navbarMenu = [
     key: "getting-started",
     path: "/getting-started",
     element: <Outlet />,
+    iconD: <SlidersOutlined style={styleInD} />,
+    iconM: <SlidersOutlined style={styleInM} />,
     type: "parent",
     childrens: [
       {
@@ -22,6 +38,8 @@ export const navbarMenu = [
         key: "getting-started-overview",
         path: "overview",
         element: <Overview />,
+        iconD: <CheckCircleOutlined style={styleInD} />,
+        iconM: <CheckCircleOutlined style={styleInM} />,
         type: "child",
       },
       {
@@ -29,6 +47,8 @@ export const navbarMenu = [
         label: "Installation",
         key: "getting-started-installation",
         path: "installation",
+        iconD: <CodeOutlined style={styleInD} />,
+        iconM: <CodeOutlined style={styleInM} />,
         element: <Installation />,
         type: "child",
       },
@@ -37,6 +57,8 @@ export const navbarMenu = [
         label: "Usage",
         key: "getting-started-usage",
         path: "usage",
+        iconD: <CoffeeOutlined style={styleInD} />,
+        iconM: <CoffeeOutlined style={styleInM} />,
         element: <Usage />,
         type: "child",
       },
@@ -45,6 +67,8 @@ export const navbarMenu = [
         label: "Contributers",
         key: "getting-started-contributers",
         path: "contributers",
+        iconD: <DeploymentUnitOutlined style={styleInD} />,
+        iconM: <DeploymentUnitOutlined style={styleInM} />,
         element: <Contributers />,
         type: "child",
       },
@@ -53,6 +77,8 @@ export const navbarMenu = [
         label: "Sponsors",
         key: "getting-started-sponsors",
         path: "sponsors",
+        iconD: <FieldBinaryOutlined style={styleInD} />,
+        iconM: <FieldBinaryOutlined style={styleInM} />,
         element: <Sponsors />,
         type: "child",
       },
@@ -64,13 +90,17 @@ export const navbarMenu = [
     key: "charts",
     path: "/charts",
     element: <Outlet />,
+    iconD: <DotChartOutlined style={styleInD} />,
+    iconM: <DotChartOutlined style={styleInM} />,
     type: "parent",
     childrens: [
       {
         id: 1,
-        label: "Column With Rotated Label Bar",
+        label: "Column With Rotated Label",
         key: "charts-column-with-rotated-label",
         path: "column-with-rotated-label",
+        iconD: <NodeIndexOutlined style={styleInD} />,
+        iconM: <NodeIndexOutlined style={styleInM} />,
         element: <ColumnWithRotatedLabelBar />,
         type: "child",
       },
@@ -79,6 +109,8 @@ export const navbarMenu = [
         label: "Date Line Chart",
         key: "charts-date-line-chart",
         path: "date-line-chart",
+        iconD: <StockOutlined style={styleInD} />,
+        iconM: <StockOutlined style={styleInM} />,
         element: <DateLineChart />,
         type: "child",
       },

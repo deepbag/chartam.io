@@ -8,7 +8,10 @@ const PageHead = ({ label, content }) => {
         variant="h3"
         sx={{
           fontWeight: "600",
-          fontSize: "30px",
+          fontSize: {
+            xs: "20px",
+            sm: "30px",
+          },
           mb: "10px",
         }}
       >
@@ -18,9 +21,15 @@ const PageHead = ({ label, content }) => {
         variant="h3"
         sx={{
           fontWeight: "300",
-          fontSize: "18px",
+          fontSize: {
+            xs: "16px",
+            sm: "18px",
+          },
           mb: "10px",
-          lineHeight: "28px"
+          lineHeight: {
+            xs: "25px",
+            sm: "28px",
+          },
         }}
       >
         {content}

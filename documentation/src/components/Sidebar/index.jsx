@@ -42,7 +42,8 @@ const Sidebar = () => {
                 dispatch(setOpenChildKey(""));
               }}
             >
-              <Box>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                {item.iconD}
                 {item.childrens.length !== 0 ? (
                   <Typography
                     sx={{
@@ -144,9 +145,11 @@ const NavLinkCustom = ({ path, active, item, handleClick }) => {
         sx={{
           background: active === item.key && "white",
           p: "8px 0 8px 30px",
+          display: "flex",
+          alignItems: "center",
         }}
-        // key={index}
       >
+        {item.iconD}
         {item.label}
       </Box>
     </NavLink>
