@@ -98,6 +98,7 @@ const Documentation = () => {
             children={
               <TableCustom head={item.table.head} body={item.table.body} />
             }
+            information={item?.information}
           />
         );
       })}

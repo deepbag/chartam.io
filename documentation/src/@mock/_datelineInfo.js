@@ -4,6 +4,15 @@ const _head = [
   { label: "Example" },
   { label: "Description" },
 ];
+const _Innerhead = [
+  { label: "Key", width: "50px" },
+  { label: "Data Type", width: "100px" },
+  { label: "Example", width: "100px" },
+  { label: "Optional", width: "50px" },
+  { label: "Default", width: "100px" },
+  { label: "Options" },
+  { label: "Description" },
+];
 
 export const _accordionDateLine = [
   {
@@ -97,5 +106,134 @@ export const _accordionDateLine = [
         },
       ],
     },
+    information: [
+      {
+        heading: "xAxis",
+        description:
+          "The term xAxis refers to the horizontal axis in a two-dimensional coordinate system. In graph.",
+        table: {
+          head: _Innerhead,
+          body: [
+            {
+              key: "timeUnit",
+              datatype: "string",
+              example: "day",
+              optional: "optional",
+              default: "day",
+              options:
+                '"millisecond", "second", "minute", "hour", "day", "week", "month", "year"',
+              description:
+                "The xaxis time unit refers to the unit of time that is used to represent data along the horizontal (x) axis in a time-based graph or chart. ",
+            },
+            {
+              key: "dateFormat",
+              datatype: "string",
+              example: "MMM-DD",
+              optional: "optional",
+              default: "MMM-DD",
+              options: '"MMM-DD","MM-DD","YYYY-MM", Write format as you want!',
+              description:
+                "The xaxis time unit refers to the unit of time that is used to represent data along the horizontal (x) axis in a time-based graph or chart. ",
+            },
+          ],
+        },
+      },
+      {
+        heading: "yAxis",
+        description:
+          "The yaxis is the vertical axis in a two-dimensional coordinate system. It is used to represent the dependent variable or output variable in a Cartesian coordinate plane. The y-axis is usually drawn vertically",
+        table: {
+          head: _Innerhead,
+          body: [
+            {
+              key: "minValue",
+              datatype: "number",
+              example: "0",
+              optional: "optional",
+              default: "0",
+              options: "any number that you want to start your yaxis",
+              description:
+                "y-axis min value refers to the minimum value or the lower bound of the vertical (y) axis in a graph or chart",
+            },
+            {
+              key: "maxValue",
+              datatype: "number",
+              example: "100",
+              optional: "optional",
+              default: "max value in the data",
+              options: "any number that you want to end your yaxis",
+              description:
+                "y-axis max value refers to the maximum value or the upper bound of the vertical (y) axis in a graph or chart.",
+            },
+          ],
+        },
+      },
+      {
+        heading: "series",
+        description:
+          "A series is used to represent a particular data set or category in a chart, and it typically consists of multiple data points that are plotted along a specific axis, such as the x-axis or the y-axis.",
+        table: {
+          head: _Innerhead,
+          body: [
+            {
+              key: "color",
+              datatype: "array",
+              example: '["#339966]',
+              optional: "optional",
+              default: '["#000"]',
+              options: "add multiple color for multi line",
+              description:
+                "The color in a line chart refers to the hue, saturation, and brightness of the lines used to connect data points.",
+            },
+            {
+              key: "fills",
+              datatype: "object",
+              example: JSON.stringify({
+                opacity: 0.2,
+              }),
+              optional: "optional",
+              default: "-",
+              options: "-",
+              description:
+                "Fills in the context of data visualization or charting refer to the areas enclosed by the lines or markers in a chart. Fills are used to visually represent the area between data points or data markers and the axis or other chart elements, such as lines, bars, or columns.",
+            },
+            {
+              key: "stroke",
+              datatype: "object",
+              example: JSON.stringify({
+                width: 3,
+                dashed: true,
+                dashedDistance: [10, 5],
+              }),
+              optional: "optional",
+              default: "-",
+              options: "-",
+              description:
+                "stroke typically refers to the outline or border around chart elements, such as lines, bars, columns, or data markers. ",
+            },
+          ],
+        },
+      },
+      {
+        heading: "scrollbarX",
+        description:
+          "In the context of charts or data visualizations, a scrollbarX could refer to a horizontal scrollbar that allows users to scroll or navigate through a large dataset horizontally within the chart's viewport. ",
+        table: {
+          head: _Innerhead,
+          body: [
+            {
+              key: "scrollbarX",
+              datatype: "boolean",
+              example: "true",
+              optional: "optional",
+              default: "false",
+              options: "true, false",
+              description:
+                "horizontal scrollbar that allows users to scroll or navigate through a large dataset horizontally within the chart's viewport.",
+            },
+          ],
+        },
+      },
+    ],
   },
 ];

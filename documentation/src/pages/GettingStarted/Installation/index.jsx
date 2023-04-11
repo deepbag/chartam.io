@@ -28,7 +28,7 @@ const Installation = () => {
       />
       <SingleTextCode content="npm i chartam.io" />
       <Typography sx={{ my: "10px" }}>Or</Typography>
-      <SingleTextCode content="yarn i chartam.io" />
+      <SingleTextCode content="yarn add chartam.io" />
       <DefaultHead
         label="Peer dependencies"
         content="react >= 17.0.0 and react-dom >= 17.0.0 are peer dependencies."

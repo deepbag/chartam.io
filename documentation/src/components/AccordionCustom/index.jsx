@@ -4,14 +4,18 @@ import {
   AccordionDetails,
   AccordionSummary,
   Typography,
+  Box,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import _ from "lodash";
+import TableCustom from "components/TableCustom/index";
 
 export default function AccordionCustom({
   heading,
   summary,
   description,
   children,
+  information,
 }) {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -31,6 +35,19 @@ export default function AccordionCustom({
       <AccordionDetails sx={{ background: "#f5f7fb", pt: 2 }}>
         <Typography sx={{ mb: 2 }}>{description}</Typography>
         {children}
+        <Box sx={{ mt: 3 }}>
+          {_.map(information, (item, index) => {
+            return (
+              <Box sx={{ mt: 3 }}>
+                <Typography sx={{ mb: 1, fontSize: "18px", fontWeight: "500" }}>
+                  {item.heading}
+                </Typography>
+                <Typography sx={{ mb: 2 }}>{item.description}</Typography>
+                <TableCustom head={item.table.head} body={item.table.body} />
+              </Box>
+            );
+          })}
+        </Box>
       </AccordionDetails>
     </Accordion>
   );
