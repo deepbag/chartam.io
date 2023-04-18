@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppRouter from "./AppRouter";
+import AppMain from "AppMain";
 import { BrowserRouter } from "react-router-dom";
 import "assets/main.css";
 import { ThemeProvider } from "@emotion/react";
@@ -15,7 +15,7 @@ root.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <AppRouter />
+          <AppMain />
           <Toaster position="top-right" reverseOrder={false} />
         </BrowserRouter>
       </ThemeProvider>

@@ -12,14 +12,9 @@ import {
 import { setOpenChildKey, setOpenKey } from "redux/reducers/menus.slice";
 import { useDispatch } from "react-redux";
 
-const App = () => {
+const AppRouter = () => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (pathname === "/") navigate("/getting-started/overview");
-  }, [pathname]);
 
   useEffect(() => {
     if (pathname) {
@@ -68,4 +63,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AppRouter;

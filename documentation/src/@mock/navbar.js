@@ -17,6 +17,7 @@ import {
   NodeIndexOutlined,
   StockOutlined,
 } from "@ant-design/icons";
+import CategoryLineChart from "pages/Charts/Line/CategoryLineChart/index";
 
 const styleInD = { fontSize: "18px", color: "white", paddingRight: "8px" };
 const styleInM = { fontSize: "18px", color: "black", paddingRight: "8px" };
@@ -112,6 +113,16 @@ export const navbarMenu = [
         iconD: <StockOutlined style={styleInD} />,
         iconM: <StockOutlined style={styleInM} />,
         element: <DateLineChart />,
+        type: "child",
+      },
+      {
+        id: 3,
+        label: "Category Line Chart",
+        key: "charts-category-line-chart",
+        path: "category-line-chart",
+        iconD: <StockOutlined style={styleInD} />,
+        iconM: <StockOutlined style={styleInM} />,
+        element: <CategoryLineChart />,
         type: "child",
       },
     ],

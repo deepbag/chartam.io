@@ -78,6 +78,8 @@ const SidebarOuts = ({ children }) => {
             background: "#343541",
             boxShadow: "none",
             zIndex: 500,
+            bottom: "90px",
+            right: "22px",
           }}
           unmountOnExit
           onClick={() => setIsOpenDrawer(!isOpenDrawer)}

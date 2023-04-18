@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const theme = useTheme();
   const navigate = useNavigate();
-  const downsm = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Container
       sx={{
@@ -20,7 +19,7 @@ const Header = () => {
         width: "100%",
       }}
       maxWidth={false}
-      className="headerMain"
+      className="headerMain main-block"
     >
       <Box>
         <Typography
