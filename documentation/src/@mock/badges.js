@@ -13,7 +13,7 @@ export const _badges = [
   },
   {
     logo: "https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white",
-    redirect: "https://www.linkedin.com/in/deepbag/",
+    redirect: "https://www.linkedin.com/company/chartamio",
   },
   {
     logo: "https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white",

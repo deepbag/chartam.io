@@ -13,11 +13,13 @@ export default function CategoryLineChart({
       minGridDistance: 50,
       labels: {
         color: "#000",
+        visible: true,
       },
     },
     yAxis: {
       labels: {
         color: "#000",
+        visible: true,
       },
     },
     series: {
@@ -121,6 +123,7 @@ export default function CategoryLineChart({
       ...(setting?.xAxis?.labels?.color && {
         fill: am5.color(setting?.xAxis?.labels?.color),
       }),
+      visible: setting?.xAxis?.labels?.visible,
     });
 
     var yAxis = chart.yAxes.push(
@@ -138,6 +141,7 @@ export default function CategoryLineChart({
       ...(setting?.yAxis?.labels?.color && {
         fill: am5.color(setting?.yAxis?.labels?.color),
       }),
+      visible: setting?.yAxis?.labels?.visible,
     });
 
     let seriestooltip = am5.Tooltip.new(root, {

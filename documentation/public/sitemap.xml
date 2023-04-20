@@ -1,32 +1,61 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://chartamio.org/</loc>
-</url>
-<url>
-<loc>https://chartamio.org/getting-started/contributers</loc>
-</url>
-<url>
-<loc>https://chartamio.org/getting-started/installation</loc>
-</url>
-<url>
-<loc>https://chartamio.org/getting-started/overview</loc>
-</url>
-<url>
-<loc>https://chartamio.org/getting-started/sponsors</loc>
-</url>
-<url>
-<loc>https://chartamio.org/getting-started/usage</loc>
-</url>
-<url>
-<loc>https://chartamio.org/charts/column-with-rotated-label</loc>
-</url>
-<url>
-<loc>https://chartamio.org/charts/date-line-chart#single-line-chart</loc>
-</url>
-<url>
-<loc>https://chartamio.org/charts/date-line-chart#single-line-chart</loc>
-</url>
-<url>
-<loc>https://chartamio.org/charts/category-line-chart#single-line-chart</loc>
-</url>
-</urlset>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+    <channel>
+        <title>Chartam Input Output - chartamio</title>
+        <link>https://chartamio.org</link>
+        <description>This package provides a comprehensive chart library built on top of amCharts 5, a powerful and
+            flexible React charting library that supports a wide range of chart types and data formats. With this
+            library, you can easily create visually stunning and interactive charts for your web applications,
+            dashboards, and reports. The library includes a variety of pre-built chart types, such as bar charts, line
+            charts, scatter charts, and more, that can be customized to fit your specific needs. The package is designed
+            to be easy to use and integrate into your existing web development workflow. It comes with comprehensive
+            documentation and examples to help you get started quickly.</description>
+        <language>en-us</language>
+        <atom:link href="https://chartamio.org/sitemap.xml" rel="self" type="application/rss+xml" />
+        <item>
+            <title>Getting Started - Overview</title>
+            <link>https://chartamio.org/getting-started/overview</link>
+            <description>This package provides a comprehensive chart library built on top of amCharts 5, a powerful and
+                flexible JavaScript charting library that supports a wide range of chart types and data formats. With
+                this library, you can easily create visually stunning and interactive charts for your web applications,
+                dashboards, and reports. The library includes a variety of pre-built chart types, such as bar charts,
+                line charts, scatter charts, and more, that can be customized to fit your specific needs. The package is
+                designed to be easy to use and integrate into your existing web development workflow. It comes with
+                comprehensive documentation and examples to help you get started quickly.</description>
+        </item>
+        <item>
+            <title>Getting Started - Installation</title>
+            <link>https://chartamio.org/getting-started/installation</link>
+            <description>Install chartam.io, the world's most popular React chart library .</description>
+        </item>
+        <item>
+            <title>Getting Started - Usage</title>
+            <link>https://chartamio.org/getting-started/usage</link>
+            <description>Learn the basics of working with chartam.io components.</description>
+        </item>
+        <item>
+            <title>Our Contributers</title>
+            <link>https://chartamio.org/getting-started/contributers</link>
+            <description>We welcome contributions from the community! If you find a bug, have a feature request, or would like to contribute code, please open an issue or pull request on our GitHub repository.</description>
+        </item>
+        <item>
+            <title>Our Sponsors</title>
+            <link>https://chartamio.org/getting-started/sponsors</link>
+            <description>Join us as a sponsor of char6tam.io and discover the benefits of partnering with a leading data visualization library.</description>
+        </item>
+        <item>
+            <title>Column with Rotated Labels</title>
+            <link>https://chartamio.org/charts/column-with-rotated-label</link>
+            <description>Beautiful bar chart with column with rotated labels category wised data.</description>
+        </item>
+        <item>
+            <title>Simple Date Line Graph</title>
+            <link>https://chartamio.org/charts/date-line-chart</link>
+            <description>Line graph (also known as Line chart) displays series of data points connected by straight line segments.</description>
+        </item>
+        <item>
+            <title>Category Line Graph</title>
+            <link>https://chartamio.org/charts/category-line-chart#single-line-chart</link>
+            <description>Line graph (also known as Line chart) displays series of data points connected by straight line segments.</description>
+        </item>
+    </channel>
+</rss>

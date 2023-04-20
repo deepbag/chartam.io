@@ -127,18 +127,3 @@ const listItems = [
   "Cross-browser compatibility",
   "Comprehensive documentation and examples",
 ];
-
-const Images = [
-  {
-    alt: "chartamio npm package",
-    Image: NPMIO,
-    width: "150px",
-    url: "https://www.npmjs.com/package/chartam.io",
-  },
-  {
-    alt: "chartamio github",
-    Image: GITHUBIO,
-    width: "60px",
-    url: "https://github.com/deepbag/chartam.io",
-  },
-];
