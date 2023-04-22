@@ -69,7 +69,7 @@ const Hero = () => {
           >
             Contact Our Team
           </Button>
-          <Typography
+          {/* <Typography
             sx={{
               fontSize: "17px",
               color: "#0177cc",
@@ -83,7 +83,7 @@ const Hero = () => {
               style={{ paddingRight: "8px", color: "#0177cc" }}
             />
             Download Brochure
-          </Typography>
+          </Typography> */}
         </Box>
       </Grid>
       <Grid item lg={6} sx={{ display: "flex", justifyContent: "end" }}>

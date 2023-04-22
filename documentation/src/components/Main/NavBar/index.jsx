@@ -28,10 +28,10 @@ const NavBar = () => {
       <Box sx={{ display: "flex" }}>
         {_.map(
           [
-            {
-              label: "Features",
-            },
-            { label: "Customers" },
+            // {
+            //   label: "Features",
+            // },
+            // { label: "Customers" },
             { label: "Documentation", path: "/getting-started/overview" },
           ],
           (item, index) => {
