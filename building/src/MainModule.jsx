@@ -28,6 +28,7 @@ const MainModule = () => {
           },
         },
         series: {
+          color: ['#339966', '#3c8469'],
           tooltip: {
             visible: true,
             text: "{category}: {valueY}",
@@ -44,8 +45,8 @@ const MainModule = () => {
           stroke: {
             color: "#339966",
             width: 3,
-            dashed: false,
-            dashedDistance: [10, 5],
+            // dashed: false,
+            // dashedDistance: [10, 5],
           },
         },
         // label: {

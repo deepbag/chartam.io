@@ -35,7 +35,7 @@ function DateLine(_ref) {
     _ref$setting = _ref.setting,
     setting = _ref$setting === void 0 ? {} : _ref$setting;
   (0, _react.useLayoutEffect)(function () {
-    var _root$_logo, _setting$xAxis, _setting$xAxis2, _setting$yAxis, _setting$yAxis2, _setting$yAxis3, _setting$yAxis4;
+    var _root$_logo, _setting$xAxis, _setting$xAxis2, _setting$xAxes, _setting$xAxes$labels, _setting$yAxis, _setting$yAxis2, _setting$yAxis3, _setting$yAxis4, _setting$yAxes, _setting$yAxes$labels;
     // Create root element
     // https://www.amcharts.com/docs/v5/getting-started/#Root_element
     var root = am5.Root["new"](chartId);
@@ -64,6 +64,8 @@ function DateLine(_ref) {
       timeUnit: setting === null || setting === void 0 ? void 0 : (_setting$xAxis = setting.xAxis) === null || _setting$xAxis === void 0 ? void 0 : _setting$xAxis.timeUnit,
       count: 1
     };
+
+    // if timeUnit is not avaliable add default day
     if (!Boolean(setting === null || setting === void 0 ? void 0 : (_setting$xAxis2 = setting.xAxis) === null || _setting$xAxis2 === void 0 ? void 0 : _setting$xAxis2.timeUnit)) xAxisItems.timeUnit = "day";
 
     // Create axes
@@ -81,21 +83,31 @@ function DateLine(_ref) {
       xAxis.get("dateFormats")[(setting === null || setting === void 0 ? void 0 : (_setting$xAxis3 = setting.xAxis) === null || _setting$xAxis3 === void 0 ? void 0 : _setting$xAxis3.timeUnit) || "day"] = setting === null || setting === void 0 ? void 0 : (_setting$xAxis4 = setting.xAxis) === null || _setting$xAxis4 === void 0 ? void 0 : _setting$xAxis4.dateFormat;
     }
     var xRenderer = xAxis.get("renderer");
-    xRenderer.labels.template.setAll({
+    xRenderer.labels.template.setAll(_objectSpread({
       fill: am5.color("#000"),
       paddingTop: 15
-    });
+    }, !(setting !== null && setting !== void 0 && (_setting$xAxes = setting.xAxes) !== null && _setting$xAxes !== void 0 && (_setting$xAxes$labels = _setting$xAxes.labels) !== null && _setting$xAxes$labels !== void 0 && _setting$xAxes$labels.visible) && {
+      visible: false
+    }));
 
     // Items for yaxis
     var yAxisItem = {
       min: setting === null || setting === void 0 ? void 0 : (_setting$yAxis = setting.yAxis) === null || _setting$yAxis === void 0 ? void 0 : _setting$yAxis.minValue,
       max: setting === null || setting === void 0 ? void 0 : (_setting$yAxis2 = setting.yAxis) === null || _setting$yAxis2 === void 0 ? void 0 : _setting$yAxis2.maxValue
     };
+    // if minValue or maxValue is not avaliable remove from object
     if (!Boolean(setting === null || setting === void 0 ? void 0 : (_setting$yAxis3 = setting.yAxis) === null || _setting$yAxis3 === void 0 ? void 0 : _setting$yAxis3.minValue)) delete yAxisItem.min;
     if (!Boolean(setting === null || setting === void 0 ? void 0 : (_setting$yAxis4 = setting.yAxis) === null || _setting$yAxis4 === void 0 ? void 0 : _setting$yAxis4.maxValue)) delete yAxisItem.max;
     var yAxis = chart.yAxes.push(am5xy.ValueAxis["new"](root, _objectSpread(_objectSpread({}, yAxisItem), {}, {
       renderer: am5xy.AxisRendererY["new"](root, {})
     })));
+    var yRenderer = yAxis.get("renderer");
+    yRenderer.labels.template.setAll(_objectSpread({
+      fill: am5.color("#000"),
+      paddingTop: 15
+    }, !(setting !== null && setting !== void 0 && (_setting$yAxes = setting.yAxes) !== null && _setting$yAxes !== void 0 && (_setting$yAxes$labels = _setting$yAxes.labels) !== null && _setting$yAxes$labels !== void 0 && _setting$yAxes$labels.visible) && {
+      visible: false
+    }));
 
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
@@ -118,10 +130,6 @@ function DateLine(_ref) {
           labelText: "".concat(item, " {valueY}")
         })
       })));
-
-      //   var tooltip = series.set("tooltip", am5.Tooltip.new(root, {}));
-      //   tooltip.label.set("text", "{valueY}");
-
       var strokeItem = {
         strokeWidth: setting === null || setting === void 0 ? void 0 : (_setting$series3 = setting.series) === null || _setting$series3 === void 0 ? void 0 : (_setting$series3$stro = _setting$series3.stroke) === null || _setting$series3$stro === void 0 ? void 0 : _setting$series3$stro.width,
         strokeDasharray: setting === null || setting === void 0 ? void 0 : (_setting$series4 = setting.series) === null || _setting$series4 === void 0 ? void 0 : (_setting$series4$stro = _setting$series4.stroke) === null || _setting$series4$stro === void 0 ? void 0 : _setting$series4$stro.dashedDistance

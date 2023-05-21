@@ -47,6 +47,7 @@ export default function DateLine({
       count: 1,
     };
 
+    // if timeUnit is not avaliable add default day
     if (!Boolean(setting?.xAxis?.timeUnit)) xAxisItems.timeUnit = "day";
 
     // Create axes
@@ -61,6 +62,7 @@ export default function DateLine({
         tooltip: am5.Tooltip.new(root, {}),
       })
     );
+
     if (xAxis) {
       xAxis.get("dateFormats")[setting?.xAxis?.timeUnit || "day"] =
         setting?.xAxis?.dateFormat;
@@ -70,6 +72,9 @@ export default function DateLine({
     xRenderer.labels.template.setAll({
       fill: am5.color("#000"),
       paddingTop: 15,
+      ...(!setting?.xAxes?.labels?.visible && {
+        visible: false,
+      }),
     });
 
     // Items for yaxis
@@ -77,7 +82,7 @@ export default function DateLine({
       min: setting?.yAxis?.minValue,
       max: setting?.yAxis?.maxValue,
     };
-
+    // if minValue or maxValue is not avaliable remove from object
     if (!Boolean(setting?.yAxis?.minValue)) delete yAxisItem.min;
     if (!Boolean(setting?.yAxis?.maxValue)) delete yAxisItem.max;
 
@@ -87,6 +92,15 @@ export default function DateLine({
         renderer: am5xy.AxisRendererY.new(root, {}),
       })
     );
+
+    let yRenderer = yAxis.get("renderer");
+    yRenderer.labels.template.setAll({
+      fill: am5.color("#000"),
+      paddingTop: 15,
+      ...(!setting?.yAxes?.labels?.visible && {
+        visible: false,
+      }),
+    });
 
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
@@ -114,9 +128,6 @@ export default function DateLine({
           }),
         })
       );
-
-      //   var tooltip = series.set("tooltip", am5.Tooltip.new(root, {}));
-      //   tooltip.label.set("text", "{valueY}");
 
       let strokeItem = {
         strokeWidth: setting?.series?.stroke?.width,
