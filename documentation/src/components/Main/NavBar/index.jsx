@@ -16,9 +16,12 @@ const NavBar = () => {
         zIndex: 100,
         width: "100%",
         borderBottom: "1px solid #f2f2f2",
+        px: {
+          lg: "80px !important",
+        },
       }}
       maxWidth={false}
-      className="headerMain main-block"
+      className="headerMain"
     >
       <Box>
         <Typography sx={{ fontWeight: "700", color: "#545a67" }}>

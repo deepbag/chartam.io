@@ -18,6 +18,7 @@ import {
   StockOutlined,
 } from "@ant-design/icons";
 import CategoryLineChart from "pages/Charts/Line/CategoryLineChart/index";
+import ForceDirectedTreeChart from "pages/Charts/Hierarchy/ForceDirectedTree";
 
 const styleInD = { fontSize: "18px", color: "white", paddingRight: "8px" };
 const styleInM = { fontSize: "18px", color: "black", paddingRight: "8px" };
@@ -123,6 +124,16 @@ export const navbarMenu = [
         iconD: <StockOutlined style={styleInD} />,
         iconM: <StockOutlined style={styleInM} />,
         element: <CategoryLineChart />,
+        type: "child",
+      },
+      {
+        id: 3,
+        label: "Force Directed Tree Chart",
+        key: "charts-force-directed-tree-chart",
+        path: "force-directed-tree-chart",
+        iconD: <StockOutlined style={styleInD} />,
+        iconM: <StockOutlined style={styleInM} />,
+        element: <ForceDirectedTreeChart />,
         type: "child",
       },
     ],

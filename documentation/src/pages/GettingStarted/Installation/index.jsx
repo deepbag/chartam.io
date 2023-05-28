@@ -13,7 +13,7 @@ const Installation = () => {
         label="Getting Started - Installation"
         content="Install chartam.io, the world's most popular React chart library ."
       />
-      <LazyLoadImage
+      {/* <LazyLoadImage
         alt={"npm library"}
         effect="blur"
         src={NPMLIBRARY}
@@ -21,7 +21,7 @@ const Installation = () => {
           width: "100%",
           border:"2px solid #000"
         }}
-      />
+      /> */}
       <DefaultHead
         label="Default installation"
         content="Run one of the following commands to add chartam.io to your project:"

@@ -17,9 +17,12 @@ const Header = () => {
         alignItems: "center",
         zIndex: 100,
         width: "100%",
+        px: {
+          lg: "80px !important",
+        },
       }}
       maxWidth={false}
-      className="headerMain main-block"
+      className="headerMain"
     >
       <Box>
         <Typography

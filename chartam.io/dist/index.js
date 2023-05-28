@@ -15,6 +15,12 @@ Object.defineProperty(exports, "DateLine", {
     return _DateLine["default"];
   }
 });
+Object.defineProperty(exports, "ForceDirectedTree", {
+  enumerable: true,
+  get: function get() {
+    return _ForceDirectedTree["default"];
+  }
+});
 Object.defineProperty(exports, "RolatedLabel", {
   enumerable: true,
   get: function get() {
@@ -24,4 +30,5 @@ Object.defineProperty(exports, "RolatedLabel", {
 var _RolatedLabel = _interopRequireDefault(require("./Bar/RolatedLabel"));
 var _DateLine = _interopRequireDefault(require("./Line/DateLine"));
 var _CategoryLine = _interopRequireDefault(require("./Line/CategoryLine"));
+var _ForceDirectedTree = _interopRequireDefault(require("./Hierarchy/ForceDirectedTree"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

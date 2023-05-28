@@ -8,9 +8,11 @@ const HomePage = () => {
       sx={{
         zIndex: 100,
         width: "100%",
+        px: {
+          lg: "80px !important",
+        },
       }}
       maxWidth={false}
-      className="main-block"
     >
       <Hero />
       <Grid container>
@@ -19,7 +21,10 @@ const HomePage = () => {
             sx={{
               fontWeight: "500",
               color: "#00000",
-              fontSize: "30px",
+              fontSize: {
+                lg: "30px",
+                xs: "25px",
+              },
               lineHeight: "40px",
               my: 1,
               textAlign: "center",
@@ -35,7 +40,10 @@ const HomePage = () => {
               my: 1,
               fontWeight: "300",
               textAlign: "center",
-              px: "250px",
+              px: {
+                lg: "250px",
+              },
+              mb: 5,
             }}
           >
             Our platform offers powerful and advanced analytics capabilities
