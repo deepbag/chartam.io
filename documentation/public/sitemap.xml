@@ -57,5 +57,10 @@
             <link>https://chartamio.org/charts/category-line-chart#single-line-chart</link>
             <description>Line graph (also known as Line chart) displays series of data points connected by straight line segments.</description>
         </item>
+         <item>
+            <title>Force Directed Tree Chart</title>
+            <link>https://chartamio.org/charts/force-directed-tree-chart#force-directed-tree-chart</link>
+            <description>Force Directed Tree is a special kind of chart used to display of multi-item data related in hierarchical, linear or mixed way, as a series of linked bubbles.</description>
+        </item>
     </channel>
 </rss>
